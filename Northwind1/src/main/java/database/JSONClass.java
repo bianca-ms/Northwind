@@ -17,7 +17,7 @@ public class JSONClass {
 
         if (connection != null) {
             try {
-                connection.setAutoCommit(false); // Habilitamos commit manual
+                connection.setAutoCommit(false); 
 
                 InputStreamReader reader = new InputStreamReader(new URL(jsonUrl).openStream());
                 StringBuilder jsonContent = new StringBuilder();
@@ -53,7 +53,7 @@ public class JSONClass {
                 System.out.println("Error al agregar productos: " + e.getMessage());
                 e.printStackTrace();
                 try {
-                    if (connection != null) connection.rollback(); // Revertir cambios en caso de error
+                    if (connection != null) connection.rollback(); 
                 } catch (Exception rollbackEx) {
                     System.out.println("Error al revertir cambios: " + rollbackEx.getMessage());
                 }
