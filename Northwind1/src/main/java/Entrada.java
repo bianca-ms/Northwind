@@ -14,13 +14,8 @@ public static void main (String[] args) {
             return; // Finalizar si no hay conexión
         }
 
-        // Paso 2: Insertar productos desde JSON
         JSONClass.addProductsFromJson();
-
-        // Paso 3: Insertar empleados y pedidos
         InsertarDatos.insertEmployeesAndOrders();
-
-        // Paso 4: Ejecutar consultas
         Consultas.executeQueries();
 
         System.out.println("Finalizando el programa.");
