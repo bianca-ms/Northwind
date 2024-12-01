@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class DBConnection {
 
     // Configuración de la base de datos
-    private static final String URL = "jdbc:mysql://127.0.0.1/almacen"; // Cambia "almacen" por el nombre de tu base de datos
-    private static final String USER = "bianca"; // Cambia "root" por tu usuario de MySQL
-    private static final String PASSWORD = "1234"; // Cambia "1234" por tu contraseña
+    private static final String URL = "jdbc:mysql://127.0.0.1/almacen";
+    private static final String USER = "bianca"; 
+    private static final String PASSWORD = "1234"; 
     private static Connection connection;
 
     // Método para obtener la conexión a la base de datos
