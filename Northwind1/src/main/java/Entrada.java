@@ -11,7 +11,7 @@ public static void main (String[] args) {
             System.out.println("Conexión establecida correctamente.");
         } else {
             System.out.println("No se pudo establecer la conexión.");
-            return; // Finalizar si no hay conexión
+            return; 
         }
 
         JSONClass.addProductsFromJson();
