@@ -11,7 +11,6 @@ public class InsertarDatos {
 
         if (connection != null) {
             try {
-                // Verificar y evitar duplicados antes de insertar empleados
                 if (!emailExists(connection, "juan.perez@example.com")) {
                     insertEmployee(connection, "Juan", "Pérez", "juan.perez@example.com");
                 } else {
@@ -24,7 +23,6 @@ public class InsertarDatos {
                     System.out.println("El correo 'ana.lopez@example.com' ya existe. Saltando inserción.");
                 }
 
-                // Insertar pedidos (sin verificar duplicados aquí)
                 insertOrder(connection, 1, "Pedido 1", 150.00);
                 insertOrder(connection, 2, "Pedido 2", 300.00);
 
