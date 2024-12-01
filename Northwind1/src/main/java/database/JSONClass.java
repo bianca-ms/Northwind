@@ -19,7 +19,6 @@ public class JSONClass {
             try {
                 connection.setAutoCommit(false); // Habilitamos commit manual
 
-                // Leer datos desde la URL
                 InputStreamReader reader = new InputStreamReader(new URL(jsonUrl).openStream());
                 StringBuilder jsonContent = new StringBuilder();
                 int data;
@@ -28,11 +27,9 @@ public class JSONClass {
                 }
                 reader.close();
 
-                // Parsear el JSON
                 JSONObject jsonObject = new JSONObject(jsonContent.toString());
                 JSONArray products = jsonObject.getJSONArray("products");
 
-                // Preparar la consulta SQL
                 String insertQuery = "INSERT INTO productos (nombre, descripcion, cantidad, precio) VALUES (?, ?, ?, ?)";
                 PreparedStatement statement = connection.prepareStatement(insertQuery);
 
@@ -50,7 +47,7 @@ public class JSONClass {
                     statement.executeUpdate();
                 }
 
-                connection.commit(); // Confirmamos los cambios
+                connection.commit(); 
                 System.out.println("Productos agregados exitosamente.");
             } catch (Exception e) {
                 System.out.println("Error al agregar productos: " + e.getMessage());
